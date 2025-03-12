@@ -1,0 +1,175 @@
+// auth
+.auth {
+    display: flex;
+    flex-direction: column;
+    background-image: url('../images/auth-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    &-container {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        width: 100%;
+        align-items: center;
+    }
+    &__form {
+        border-radius: 5px;
+        background-image: url('../images/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        width: 662px;
+        padding-top: 55px;
+        padding-bottom: 92px;
+        padding-right: 178px;
+        padding-left: 178px;
+        margin-bottom: 52px;
+        &_items {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        &_inputs {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+        }
+    }
+}
+
+.application {
+    @extend .menu;
+    background-image: url('../images/application-bg.jpg');
+    &__application {
+        background-color: $white;
+        width: 100%;
+        padding: 30px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+// personal
+.personal {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+    margin-bottom: 52px;
+    &__info {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        &_block {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            &-container {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                width: 100%;
+            }
+        }
+        &_form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            &_button {
+                width: 330px;
+                margin-top: 8px;
+                &_select {
+                    width: 180px;
+                }
+            }
+        }
+    }
+    &__applications {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 24px;
+        &_container {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            width: 100%;
+        }
+        &_item {
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid $gray-pink;
+            padding: 14px 2px;
+            border-radius: 6px;
+            width: 100%;
+            &-container {
+                @extend .personal__info_block-container;
+                & div {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    &__application {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+        &_container {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+        &_item {
+            &-container {
+                display: flex;
+                gap: 8px;
+                align-items: center;
+                width: 100%;
+            }
+            &_button {
+                margin-top: 6px;
+            }
+        }
+        &_menu__block {
+            padding-top: 40px;
+            & .menu__content_items {
+                flex-direction: column;
+                width: 100%;
+                & .menu__content_item {
+                    width: 100%;
+                }
+            }
+        }
+        &_form {
+            display: flex;
+            justify-content: space-between;
+            gap: 44px;
+            width: 100%;
+            align-items: center;
+            &_input {
+                width: 120px;
+            }
+        }
+    }
+}
+.edit__form {
+    display: flex;
+    gap: 20px;
+}
+

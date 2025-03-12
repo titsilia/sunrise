@@ -5,12 +5,39 @@
     <div class="auth center">
         <div class="auth-container">
             <x-header-white/>
-            <form action="" class="auth__form">
+            <form  method="POST" action="/auth_user" class="auth__form">
+                @csrf
                 <h2 class="text-h2-med">Авторизация</h2>
                 <div class="auth__form_items">
                     <div class="auth__form_inputs">
-                        <input class="input" type="text" name="authEmail", placeholder="Email">
-                        <input class="input" type="password" name="authPassword", placeholder="Введите пароль">
+                        @if(session('error'))
+                            <div class="input-error-text">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                            @if(session('success'))
+                                <div class="input-success-text">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+                        <div class="inputs-container">
+                            <input class="input @error('email') input-error-field @enderror" type="text" name="email" placeholder="Email">
+
+                            @error("email")
+                                <div class="input-error-text" role="alert">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="inputs-container">
+                            <input class="input @error('password') input-error-field @enderror" type="password" name="password" placeholder="Введите пароль">
+
+                            @error("password")
+                                <div class="input-error-text" role="alert">
+                                    {{$message}}
+                                </div>
+                            @enderror
+                        </div>
                     </div>
                     <div class="auth__form_inputs">
                         <button class="button">Войти</button>
@@ -20,11 +47,11 @@
 
             </form>
         </div>
-        
+
         <div class="main__footer text-body3-reg">
-            <a href="#">2023, Stolitsa Group</a>
+            <a href="#">2024, Stolitsa Group</a>
             <a href="#">VK</a>
             <a href="#">Telegramm</a>
-        </div>  
+        </div>
     </div>
 @endsection('content')

@@ -16,7 +16,7 @@
         </div>
         <div class="aboutus__center center"></div>
         <div class="aboutus__kitchen center">
-            <img src="../images/kitchen.png" class="aboutus__kitchen_img"></img>
+            <img src="../images/kitchen.png" class="aboutus__kitchen_img" alt="Наши повара">
             <div class="aboutus__kitchen_text">
                 <h2 class="text-h3-med">О нашей кухне</h2>
                 <div class="text-body22-reg"> Наша команда внимательных официантов и профессиональных поваров сделает все возможное, чтобы ваш вечер стал незабываемым. Меню ресторана "Рассвет" состоит из многочисленных изысканных и разнообразных блюд, приготовленных только из свежих и качественных ингредиентов.</div>

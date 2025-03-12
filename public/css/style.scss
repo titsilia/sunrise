@@ -15,7 +15,8 @@ $gray-pink: #B29397;
 $dark-red: #9E5151;
 $white: #FFF;
 $beige: #F3E1CF;
-$beige2: #F3E1CF;
+$beige2: #F6F3EF;
+$red: #FF1E25;
 
 
 a {
@@ -50,6 +51,36 @@ body {
 .center {
     padding-left: calc(50% - 600px);
     padding-right: calc(50% - 600px);
+}
+
+// ПАГИНАЦИЯ
+.small, .text-muted {
+    display: none;
+}
+.pagination {
+    margin-bottom: 0;
+}
+.page-item {
+    & .active {
+        background-color: $pink !important;
+        background: $pink !important;
+    }
+}
+
+.page-link {
+    color: $pink;
+    &:hover {
+        color: $dark-pink;
+    }
+}
+
+.active>.page-link, .page-link.active {
+    background-color: $pink !important;
+    background: $pink !important;
+    border-color: $pink !important;
+    &:hover {
+        color: $beige;
+    }
 }
 
 // ТЕКСТЫ
@@ -168,7 +199,7 @@ body {
 }
 
 // 12
-.text-body4-reg {
+.text-body5-reg {
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -177,6 +208,10 @@ body {
 
 .text-white {
     color: $white;
+}
+
+.gray-pink {
+    color: #B29397;
 }
 
 // button
@@ -197,10 +232,10 @@ button {
     transition: all .3s;
     outline: none;
     border: none;
-    padding: 12px 42px;
+    padding: 12px;
     font-size: 18px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
     width: 100%;
     &:hover {
@@ -209,6 +244,11 @@ button {
     &:active {
         background: $light-pink;
     }
+}
+
+.button-mini {
+    @extend .button;
+    padding: 8px;
 }
 
 .button-light {
@@ -247,9 +287,8 @@ button {
     border-radius: 2px;
     border: 1px solid $gray1;
     background: #FFF;
-    padding: 10px 14px;
+    padding: 7px 14px;
     outline: none;
-    height: 40px;
     &::placeholder {
         color: $gray1;
     }
@@ -261,184 +300,56 @@ button {
     }
 }
 
-.footer {
-    height: 100px;
+.input-error-field {
+    border: 1px solid $red !important;
+}
+
+.input-error-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: $red;
+}
+
+.input-success-text {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: green;
+}
+
+.inputs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     width: 100%;
-    padding-top: 38px;
-    padding-bottom: 38px;
-    background-image: url('../images/footer.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    gap: 64px;
 }
 
-.header {
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 32px;
-    &__nav {
-        display: flex;
-        gap: 20px;
-    }
+.select {
+    @extend .input;
+    height: auto;
 }
 
-// для главной
-.main {
-    background-image: url('../images/main-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    height: 100vh;
-    width: 100%;
-    transition: all .5s;
-    &:hover {
-        opacity: 0.8;
-    }
-    &__header {
-        padding-top: 80px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    &__footer {
-        display: flex;
-        gap: 64px;
-        padding-bottom: 20px;
-    }
-}
+//.selects {
+//    background-color: transparent;
+//    padding: 11px 22px 10px 14px;
+//    width: 330px;
+//    height: 41px;
+//    border: 1px solid #423000;
+//    border-radius: 16px;
+//    font-family: inherit;
+//    font-style: normal;
+//    font-weight: 400;
+//    font-size: 16px;
+//    line-height: 20px;
+//    outline: none;
+//}
 
-// длф "о нас"
-.aboutus {
-    display: flex;
-    flex-direction: column;
-    &__header {
-        height: 60vh;
-        background-image: url('../images/main-header.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    &__us {
-        padding-top: 45px;
-        padding-bottom: 45px;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        background-image: url('../images/bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        &_texts {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-    }
-    &__center {
-        height: 60vh;
-        background-image: url('../images/main-center.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-    &__kitchen {
-        display: flex;
-        gap: 40px;
-        padding-top: 45px;
-        padding-bottom: 100px;
-        background-image: url('../images/bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        &_img {
-            width: 480px;
-            height: 450px;
-            border-radius: 2px;
-        }
-        &_text {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-    }
-}
-
-// auth
-.auth {
-    display: flex;
-    flex-direction: column;
-    background-image: url('../images/auth-bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 100vh;
-    &-container {
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-    }
-    &__form {
-        border-radius: 5px;
-        background-image: url('../images/bg.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        width: 662px;
-        padding-top: 55px;
-        padding-bottom: 92px;
-        padding-right: 178px;
-        padding-left: 178px;
-        &_items {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-        }
-        &_inputs {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 14px;
-        }
-    }
-}
-
-// menu 
-.menu {
-    display: flex;
-    flex-direction: column;
-    min-height: 91vh;
-    background-image: url('../images/bg.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    &-container {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 50px;
-    }
-    &__menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    &__block {
-        display: flex;
-        flex-direction: column;
-        background: $dark;
-        border-radius: 2px;
-        width: 100%;
-        height: 100px;
-    }
-}
+@import 'header';
+@import 'main';
+@import 'menu';
+@import 'client';
+@import 'admin';
+@import 'adaptability';

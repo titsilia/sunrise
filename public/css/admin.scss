@@ -1,0 +1,119 @@
+// admin
+.admin-applications {
+    display: flex;
+    flex-direction: column;
+    min-height: 91vh;
+    background-color: $beige2;
+    gap: 50px;
+    padding-bottom: 50px;
+    &-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+    }
+    &__item {
+        width: 100%;
+        background-image: url('../images/bg.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding: 40px 26px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        &_info {
+            display: flex;
+            gap: 60px;
+            &-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        &_button {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 276px;
+        }
+    }
+
+    & table {
+        border-collapse: collapse;
+        & thead {
+            & tr {
+                th {
+                    text-align: center;
+                    border-bottom: 1px solid $dark;
+                    padding-bottom: 25px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    &:first-child {
+                        text-align: left;
+                    }
+                    &:nth-child(2) {
+                        width: 200px;
+                    }
+                    &:nth-child(5) {
+                        width: 260px;
+                    }
+                    &:nth-child(6) {
+                        width: 205px;
+                    }
+                }
+
+            }
+        }
+        & tbody {
+            & tr {
+                & td {
+                    padding-top: 25px;
+                    padding-left: 10px;
+                    padding-right: 10px;
+                    text-align: center;
+                    &:first-child {
+                        text-align: left;
+                    }
+                    & span {
+                        display: block;
+                    }
+                    & .first-td {
+                        margin-bottom: -12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.admin_menu {
+    @extend .personal;
+    flex-direction: row;
+    & form {
+        width: 100%;
+    }
+    &-container {
+        @extend .personal__info_form;
+        width: 100%;
+    }
+    &__items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        //justify-content: space-between;
+        & form {
+            width: 100%;
+        }
+    }
+    &__info_block-container {
+        @extend .personal__info_block-container;
+    }
+}
